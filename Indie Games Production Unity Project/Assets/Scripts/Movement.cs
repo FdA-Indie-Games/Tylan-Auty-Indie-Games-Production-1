@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     float EndPoint;
     float RightEnd = 22.5f;
     float LeftEnd = -22.5f;
+    public GameObject ball;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,14 @@ public class Movement : MonoBehaviour
         if (LeftEnd == EndPoint & Position <= LeftEnd)
         {
             SpeedStop = true;
+        }
+
+        if (LeftEnd == EndPoint)
+        {
+            if (Input.GetKeyDown("mouse 0"))
+            {
+                Instantiate(ball, transform.position, transform.rotation);
+            }
         }
     }
 
