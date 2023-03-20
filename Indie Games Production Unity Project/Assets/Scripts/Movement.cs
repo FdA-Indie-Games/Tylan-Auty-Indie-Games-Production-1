@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Movement : MonoBehaviour
     float RightEnd = 22.5f;
     float LeftEnd = -22.5f;
     public GameObject ball;
+
+    public GameObject FirePoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +53,15 @@ public class Movement : MonoBehaviour
 
         if (LeftEnd == EndPoint)
         {
-            if (Input.GetKeyDown("mouse 0"))
+            if (Input.GetButtonDown("Fire1"))
             {
-                Instantiate(ball, transform.position, transform.rotation);
+                Instantiate(ball, FirePoint.transform.position, transform.rotation);
             }
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            SceneManager.LoadScene("SampleScene");
         }
     }
 

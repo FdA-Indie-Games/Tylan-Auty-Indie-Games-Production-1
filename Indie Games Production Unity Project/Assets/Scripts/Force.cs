@@ -7,8 +7,9 @@ public class Force : MonoBehaviour
 
     Rigidbody Rigid;
     public float force;
-
+    float time;
     float gravity = -9.81f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,12 @@ public class Force : MonoBehaviour
     void Update()
     {
         Rigid.velocity = new Vector3(0,0,-1) * force * gravity;
+
+        time = time + Time.deltaTime;
+
+        if (time > 3)
+        {
+            Destroy(gameObject);
+        }
     }
 }
