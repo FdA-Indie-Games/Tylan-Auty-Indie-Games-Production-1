@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 3568046109277612986}
   m_Layer: 0
   m_Name: Bowling Pin
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,3 +452,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPoint: 0
   CurrentPoint: 0
+  DespawnTime: 0
+  PinHit: 0
