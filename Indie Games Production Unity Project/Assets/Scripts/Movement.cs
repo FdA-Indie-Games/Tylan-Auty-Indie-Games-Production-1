@@ -14,13 +14,18 @@ public class Movement : MonoBehaviour
     float RightEnd = 22.5f;
     float LeftEnd = -22.5f;
     public GameObject ball;
-
+    public bool HasFired;
     public GameObject FirePoint;
+    public float CheckValue;
+    //public GameObject[] AisleChecker;
+
     // Start is called before the first frame update
     void Start()
     {
         SpeedStop = false;
         EndPoint = RightEnd;
+        HasFired = false;
+        //AisleChecker = GameObject.FindGameObjectsWithTag("AisleChecker");
     }
 
     // Update is called once per frame
@@ -53,9 +58,10 @@ public class Movement : MonoBehaviour
 
         if (LeftEnd == EndPoint)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if ((HasFired == false) && (Input.GetButtonDown("Fire1")))
             {
                 Instantiate(ball, FirePoint.transform.position, transform.rotation);
+                HasFired = true;
             }
         }
 
@@ -65,6 +71,19 @@ public class Movement : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("AisleChecker"))
+            {
+                HasFired = false;
+            }
+
+            if (other.gameObject.CompareTag("Checkpoint"))
+            {
+                CheckValue = GetComponent<Checkpoints>().Value;
+            }
+        }
+
     IEnumerator DirectionChange()
     {
         yield return new WaitForSeconds(2);
@@ -72,7 +91,7 @@ public class Movement : MonoBehaviour
         EndPoint = LeftEnd;
     }
 
-    /* public void OnTriggerEnter(Collider Endcheck)
+    /*public void OnTriggerEnter(Collider Endcheck)
     {
         SpeedStop = true;
     }*/
