@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour
     public bool HasFired;
     public GameObject FirePoint;
     public float CheckValue;
+    public float Turn;
+    bool TurnIncrease;
     //public GameObject[] AisleChecker;
 
     // Start is called before the first frame update
@@ -25,11 +27,25 @@ public class Movement : MonoBehaviour
         SpeedStop = false;
         EndPoint = RightEnd;
         HasFired = false;
+        Speed = -6;
+        Turn = 0;
         //AisleChecker = GameObject.FindGameObjectsWithTag("AisleChecker");
     }
 
     // Update is called once per frame
     void Update()
+    {
+        
+        if (TurnIncrease == false)
+        {
+        TurnIncrease = true;
+        Turn = Turn + 1;
+        }
+
+        TurnProcess();
+    }
+
+    void TurnProcess()
     {
         if(SpeedStop == false & EndPoint == RightEnd)
         {
@@ -54,6 +70,7 @@ public class Movement : MonoBehaviour
         if (LeftEnd == EndPoint & Position <= LeftEnd)
         {
             SpeedStop = true;
+            StartCoroutine(Loop());
         }
 
         if (LeftEnd == EndPoint)
@@ -67,10 +84,24 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Game1");
+        }
+
+        if (CheckValue == -1)
+        {
+            Speed = -8;
+        }
+
+        if (CheckValue == 0)
+        {
+            Speed = -10;
+        }
+
+        if (CheckValue == 1)
+        {
+            Speed = -12;
         }
     }
-
     void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("AisleChecker"))
@@ -80,10 +111,24 @@ public class Movement : MonoBehaviour
 
             if (other.gameObject.CompareTag("Checkpoint"))
             {
-                CheckValue = GetComponent<Checkpoints>().Value;
+                CheckValue = other.GetComponent<Checkpoints>().Value;
+            }
+
+            if (other.gameObject.CompareTag("StartCheckpoint"))
+            {
+                TurnIncrease = false;
             }
         }
-
+    IEnumerator Loop()
+    {
+        yield return new WaitForSeconds(2);
+        SpeedStop = false;
+        EndPoint = RightEnd;
+        HasFired = false;
+        Speed = -6;
+        
+        TurnProcess();
+    }
     IEnumerator DirectionChange()
     {
         yield return new WaitForSeconds(2);
