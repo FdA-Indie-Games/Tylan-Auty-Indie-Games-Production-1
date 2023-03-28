@@ -8,6 +8,7 @@ TagManager:
   - AisleChecker
   - Checkpoint
   - StartCheckpoint
+  - PinSpawn
   layers:
   - Default
   - TransparentFX
