@@ -18,7 +18,9 @@ public class Movement : MonoBehaviour
     public GameObject FirePoint;
     public float CheckValue;
     public float Turn;
-    bool TurnIncrease;
+    public bool TurnIncrease;
+    public GameObject Pin;
+    public Vector3 PinSpawn;
     //public GameObject[] AisleChecker;
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class Movement : MonoBehaviour
         HasFired = false;
         Speed = -6;
         Turn = 0;
+        PinSpawn = Pin.transform.position;
         //AisleChecker = GameObject.FindGameObjectsWithTag("AisleChecker");
     }
 
@@ -38,8 +41,9 @@ public class Movement : MonoBehaviour
         
         if (TurnIncrease == false)
         {
-        TurnIncrease = true;
-        Turn = Turn + 1;
+            TurnIncrease = true;
+            Pin.transform.position = PinSpawn;
+            Turn = Turn + 1;
         }
 
         TurnProcess();

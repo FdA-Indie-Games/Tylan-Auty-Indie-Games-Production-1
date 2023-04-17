@@ -450,7 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7051cb6c2c97460429d3d0ecaac96c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPoint: 0
-  CurrentPoint: 0
-  DespawnTime: 0
+  StartPoint: {x: 0, y: 0, z: 0}
+  CurrentPoint: {x: 0, y: 0, z: 0}
+  NewTurn: 0
   PinHit: 0
+  Pin: {fileID: 6111104424592786559}
