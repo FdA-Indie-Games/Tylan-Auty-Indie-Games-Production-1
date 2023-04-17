@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     public float Turn;
     public bool TurnIncrease;
     public GameObject Pin;
-    public Vector3 PinSpawn;
+    public GameObject[] PinSpawn;
     //public GameObject[] AisleChecker;
 
     // Start is called before the first frame update
@@ -31,8 +31,9 @@ public class Movement : MonoBehaviour
         HasFired = false;
         Speed = -6;
         Turn = 0;
+        PinSpawn = GameObject.FindGameObjectsWithTag("PinSpawn");
         //Pin = GameObject.FindGameObjectsWithTag("Pin");
-        PinSpawn = Pin.transform.position;
+        //PinSpawn = Pin.transform.position;
         //AisleChecker = GameObject.FindGameObjectsWithTag("AisleChecker");
     }
 
@@ -128,7 +129,10 @@ public class Movement : MonoBehaviour
     {
         Destroy(Pin);
         yield return new WaitForSeconds(2);
-        Instantiate(Pin, PinSpawn, Quaternion.identity);
+        for (int i = 0; i < PinSpawn.Length; i++)
+        {
+            Instantiate(Pin, PinSpawn[i].transform);
+        }
         SpeedStop = false;
         EndPoint = RightEnd;
         HasFired = false;
