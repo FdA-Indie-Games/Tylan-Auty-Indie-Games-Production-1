@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
         HasFired = false;
         Speed = -6;
         Turn = 0;
+        //Pin = GameObject.FindGameObjectsWithTag("Pin");
         PinSpawn = Pin.transform.position;
         //AisleChecker = GameObject.FindGameObjectsWithTag("AisleChecker");
     }
@@ -42,7 +43,7 @@ public class Movement : MonoBehaviour
         if (TurnIncrease == false)
         {
             TurnIncrease = true;
-            Pin.transform.position = PinSpawn;
+            //Pin.transform.position = PinSpawn;
             Turn = Turn + 1;
         }
 
@@ -125,7 +126,9 @@ public class Movement : MonoBehaviour
         }
     IEnumerator Loop()
     {
+        Destroy(Pin);
         yield return new WaitForSeconds(2);
+        Instantiate(Pin, PinSpawn, Quaternion.identity);
         SpeedStop = false;
         EndPoint = RightEnd;
         HasFired = false;

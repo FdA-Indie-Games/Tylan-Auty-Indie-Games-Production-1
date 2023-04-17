@@ -11415,6 +11415,9 @@ MonoBehaviour:
   FirePoint: {fileID: 635448757}
   CheckValue: 0
   Turn: 0
+  TurnIncrease: 0
+  Pin: {fileID: 6111104424592786559, guid: 7d414d9be6c3c14418a728b868309389, type: 3}
+  PinSpawn: {x: 0, y: 0, z: 0}
 --- !u!4 &1682933589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477523943569567592, guid: 4b207dc385baa524bbc111682f8b61c3, type: 3}

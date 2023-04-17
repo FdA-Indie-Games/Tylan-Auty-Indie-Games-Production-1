@@ -5,8 +5,8 @@ using UnityEngine;
 public class HitCheck : MonoBehaviour
 {
 
-    public Vector3 StartPoint;
-    public Vector3 CurrentPoint;
+    public float StartPointX;
+    public float CurrentPointX;
     public bool NewTurn;
 
     public int PinHit;
@@ -16,16 +16,16 @@ public class HitCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartPoint = gameObject.transform.position;
+        StartPointX = gameObject.transform.position.x;
         PinHit = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CurrentPoint = gameObject.transform.position;
+        CurrentPointX = gameObject.transform.position.x;
 
-        if(CurrentPoint != StartPoint)
+        if(CurrentPointX != StartPointX)
         {
             Debug.Log("Hit");
             PinHit = 1;
@@ -38,5 +38,11 @@ public class HitCheck : MonoBehaviour
         {
             Instantiate(Pin, StartPoint, transform.rotation);
         }*/
+    }
+
+    void TurnProcess()
+    {
+        Destroy(gameObject);
+
     }
 }
