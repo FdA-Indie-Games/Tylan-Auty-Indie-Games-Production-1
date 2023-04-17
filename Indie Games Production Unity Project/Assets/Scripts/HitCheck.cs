@@ -11,6 +11,7 @@ public class HitCheck : MonoBehaviour
 
     public int PinHit;
     public GameObject Pin;
+    public float DestroyTime;
     //public int Hits;
     
     // Start is called before the first frame update
@@ -29,6 +30,11 @@ public class HitCheck : MonoBehaviour
         {
             Debug.Log("Hit");
             PinHit = 1;
+            DestroyTime = DestroyTime + Time.deltaTime;
+            if (DestroyTime >= 1)
+            {
+                Destroy(gameObject);
+            }
             //Hits += 1;
         }
 

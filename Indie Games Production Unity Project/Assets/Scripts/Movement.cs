@@ -19,8 +19,10 @@ public class Movement : MonoBehaviour
     public float CheckValue;
     public float Turn;
     public bool TurnIncrease;
-    public GameObject Pin;
+    public GameObject[] Pin;
     public GameObject[] PinSpawn;
+    public GameObject NewPin;
+    public bool HasSpawned;
     //public GameObject[] AisleChecker;
 
     // Start is called before the first frame update
@@ -31,6 +33,8 @@ public class Movement : MonoBehaviour
         HasFired = false;
         Speed = -6;
         Turn = 0;
+        HasSpawned = true;
+        Pin = GameObject.FindGameObjectsWithTag("Pin");
         PinSpawn = GameObject.FindGameObjectsWithTag("PinSpawn");
         //Pin = GameObject.FindGameObjectsWithTag("Pin");
         //PinSpawn = Pin.transform.position;
@@ -40,7 +44,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     Debug.Log(HasSpawned);   
         if (TurnIncrease == false)
         {
             TurnIncrease = true;
@@ -75,6 +79,7 @@ public class Movement : MonoBehaviour
         }
         if (LeftEnd == EndPoint & Position <= LeftEnd)
         {
+            PinSpawner();
             SpeedStop = true;
             StartCoroutine(Loop());
         }
@@ -127,16 +132,26 @@ public class Movement : MonoBehaviour
         }
     IEnumerator Loop()
     {
-        Destroy(Pin);
         yield return new WaitForSeconds(2);
-        for (int i = 0; i < PinSpawn.Length; i++)
+        for (int i = 0; i < Pin.Length; i++)
         {
-            Instantiate(Pin, PinSpawn[i].transform);
+           Destroy(Pin[i]);
         }
+        {
+            if(HasSpawned == false)
+            for (int i = 0; i < PinSpawn.Length; i++)
+            {
+            Instantiate(NewPin, PinSpawn[i].transform);
+            }
+            HasSpawned = true;
+        }
+        
+        HasSpawned = true;
         SpeedStop = false;
         EndPoint = RightEnd;
         HasFired = false;
         Speed = -6;
+        
         
         TurnProcess();
     }
@@ -151,4 +166,17 @@ public class Movement : MonoBehaviour
     {
         SpeedStop = true;
     }*/
+
+    void PinSpawner()
+    {
+        if (HasSpawned != true)
+        {
+            HasSpawned = true;
+            for (int i = 0; i < PinSpawn.Length; i++)
+            {
+                Instantiate(NewPin, PinSpawn[i].transform);
+            }
+            HasSpawned = true;
+        }
+    }
 }
