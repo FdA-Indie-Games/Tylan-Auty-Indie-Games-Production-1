@@ -9,7 +9,7 @@ public class CPURandom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Displacement.x = Random.Range(-1.875f, 1.875f);
+        Displacement.x = Random.Range(-1.25f, 1.25f);
 
         transform.Translate(Displacement);
     }
