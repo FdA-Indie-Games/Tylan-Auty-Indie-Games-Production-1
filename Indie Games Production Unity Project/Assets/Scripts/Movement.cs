@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,7 @@ public class Movement : MonoBehaviour
     public bool HasFired;
     public GameObject FirePoint;
     public float CheckValue;
-    public float Turn;
+    public static float Turn;
     public bool TurnIncrease;
     public GameObject[] Pin;
     public GameObject[] PinSpawn;
@@ -44,7 +45,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     Debug.Log(HasSpawned);   
+     Debug.Log(Turn);   
         if (TurnIncrease == false)
         {
             TurnIncrease = true;
@@ -79,14 +80,14 @@ public class Movement : MonoBehaviour
         }
         if (LeftEnd == EndPoint & Position <= LeftEnd)
         {
-            PinSpawner();
+            //PinSpawner();
             SpeedStop = true;
             StartCoroutine(Loop());
         }
 
         if (LeftEnd == EndPoint)
         {
-            if ((HasFired == false) && (Input.GetButtonDown("Fire1")))
+            if ((HasFired == false) && (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1")) && (Input.GetButtonDown("Fire1")))
             {
                 Instantiate(ball, FirePoint.transform.position, transform.rotation);
                 HasFired = true;
@@ -129,10 +130,25 @@ public class Movement : MonoBehaviour
             {
                 TurnIncrease = false;
             }
+
+            if ((other.gameObject.CompareTag("CPUFire")) && (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game3")) && (LeftEnd == EndPoint))
+                    {
+                        Instantiate(ball, FirePoint.transform.position, transform.rotation);
+                        HasFired = true;
+                    }
         }
     IEnumerator Loop()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds (2);
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game3"))
+        {
+            SceneManager.LoadScene ("Game1");
+        }
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
+        {
+            SceneManager.LoadScene ("Game3");
+        }
+        /*yield return new WaitForSeconds(2);
         for (int i = 0; i < Pin.Length; i++)
         {
            Destroy(Pin[i]);
@@ -153,7 +169,7 @@ public class Movement : MonoBehaviour
         Speed = -6;
         
         
-        TurnProcess();
+        TurnProcess();*/
     }
     IEnumerator DirectionChange()
     {
@@ -167,8 +183,9 @@ public class Movement : MonoBehaviour
         SpeedStop = true;
     }*/
 
-    void PinSpawner()
+    /*void PinSpawner()
     {
+        
         if (HasSpawned != true)
         {
             HasSpawned = true;
@@ -178,5 +195,5 @@ public class Movement : MonoBehaviour
             }
             HasSpawned = true;
         }
-    }
+    }*/
 }

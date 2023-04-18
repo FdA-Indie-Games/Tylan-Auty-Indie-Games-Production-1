@@ -9,6 +9,7 @@ TagManager:
   - Checkpoint
   - StartCheckpoint
   - PinSpawn
+  - CPUFire
   layers:
   - Default
   - TransparentFX
