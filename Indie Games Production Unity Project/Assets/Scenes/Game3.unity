@@ -769,8 +769,8 @@ GameObject:
   - component: {fileID: 127919518}
   - component: {fileID: 127919517}
   - component: {fileID: 127919516}
-  - component: {fileID: 127919515}
   - component: {fileID: 127919514}
+  - component: {fileID: 127919515}
   m_Layer: 0
   m_Name: CPUFire 5
   m_TagString: CPUFire
@@ -817,12 +817,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 127919512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &127919516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1468,8 +1465,8 @@ GameObject:
   - component: {fileID: 155815373}
   - component: {fileID: 155815372}
   - component: {fileID: 155815371}
-  - component: {fileID: 155815370}
   - component: {fileID: 155815369}
+  - component: {fileID: 155815370}
   m_Layer: 0
   m_Name: CPUFire 4
   m_TagString: CPUFire
@@ -1516,12 +1513,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 155815367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &155815371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3086,8 +3080,8 @@ GameObject:
   - component: {fileID: 409003377}
   - component: {fileID: 409003376}
   - component: {fileID: 409003375}
-  - component: {fileID: 409003374}
   - component: {fileID: 409003373}
+  - component: {fileID: 409003374}
   m_Layer: 0
   m_Name: CPUFire 7
   m_TagString: CPUFire
@@ -3134,12 +3128,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 409003371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &409003375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5269,8 +5260,8 @@ GameObject:
   - component: {fileID: 697146851}
   - component: {fileID: 697146850}
   - component: {fileID: 697146849}
-  - component: {fileID: 697146848}
   - component: {fileID: 697146847}
+  - component: {fileID: 697146848}
   m_Layer: 0
   m_Name: CPUFire 6
   m_TagString: CPUFire
@@ -5317,12 +5308,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 697146845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &697146849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6228,8 +6216,8 @@ GameObject:
   - component: {fileID: 822866570}
   - component: {fileID: 822866569}
   - component: {fileID: 822866568}
-  - component: {fileID: 822866567}
   - component: {fileID: 822866566}
+  - component: {fileID: 822866567}
   m_Layer: 0
   m_Name: CPUFire 3
   m_TagString: CPUFire
@@ -6276,12 +6264,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 822866564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &822866568
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7868,8 +7853,8 @@ GameObject:
   - component: {fileID: 1143053477}
   - component: {fileID: 1143053476}
   - component: {fileID: 1143053475}
-  - component: {fileID: 1143053474}
   - component: {fileID: 1143053473}
+  - component: {fileID: 1143053474}
   m_Layer: 0
   m_Name: CPUFire 2
   m_TagString: CPUFire
@@ -7916,12 +7901,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1143053471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &1143053475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10879,8 +10861,8 @@ GameObject:
   - component: {fileID: 1549412593}
   - component: {fileID: 1549412592}
   - component: {fileID: 1549412591}
-  - component: {fileID: 1549412590}
   - component: {fileID: 1549412589}
+  - component: {fileID: 1549412590}
   m_Layer: 0
   m_Name: CPUFire 8
   m_TagString: CPUFire
@@ -10927,12 +10909,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1549412587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &1549412591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11086,7 +11065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554554257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.0699997, y: 1.5117033, z: 5.333505}
+  m_LocalPosition: {x: -5.15, y: 1.5117033, z: 5.333505}
   m_LocalScale: {x: 4.5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1146303288}
@@ -11549,8 +11528,8 @@ GameObject:
   - component: {fileID: 1622316391}
   - component: {fileID: 1622316390}
   - component: {fileID: 1622316389}
-  - component: {fileID: 1622316388}
   - component: {fileID: 1622316387}
+  - component: {fileID: 1622316388}
   m_Layer: 0
   m_Name: CPUFire 1
   m_TagString: CPUFire
@@ -11597,12 +11576,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622316385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed743458789a5f41b8ff40383f09240, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0aafcc99ca1124ab963b4f6a623339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: 0
-  Checkpoint: []
-  Value: 0
 --- !u!65 &1622316389
 BoxCollider:
   m_ObjectHideFlags: 0
