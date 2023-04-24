@@ -23,6 +23,6 @@ public class GameStart : MonoBehaviour
 
     public void VsCpu()
     {
-        SceneManager.LoadScene("Game3");
+        SceneManager.LoadScene("Game1");
     }
 }

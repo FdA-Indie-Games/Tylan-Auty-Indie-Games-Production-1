@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
     public GameObject[] PinSpawn;
     public GameObject NewPin;
     public bool HasSpawned;
+
     //public GameObject[] AisleChecker;
 
     // Start is called before the first frame update
@@ -196,4 +197,6 @@ public class Movement : MonoBehaviour
             HasSpawned = true;
         }
     }*/
+
+    //Unity API used to assist with fair portions of code
 }
