@@ -39,11 +39,6 @@ public class Pause : MonoBehaviour
         Paused = false;
     }
 
-    public void Restart()
-    {
-        SceneManager.LoadScene("Game1");
-    }
-
     public void Menu()
     {
         SceneManager.LoadScene("StartUI");

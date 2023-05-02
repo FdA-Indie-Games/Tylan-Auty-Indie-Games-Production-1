@@ -18,11 +18,18 @@ public class GameStart : MonoBehaviour
 
     public void PracticeMode()
     {
-        SceneManager.LoadScene("Game1");
+        SceneManager.LoadScene("Game2");
+    }
+
+    public void PartyMode()
+    {
+        SceneManager.LoadScene("Game4");
     }
 
     public void VsCpu()
     {
         SceneManager.LoadScene("Game1");
     }
+
+    //https://www.youtube.com/watch?v=zc8ac_qUXQY used for initial understanding of UI elements
 }

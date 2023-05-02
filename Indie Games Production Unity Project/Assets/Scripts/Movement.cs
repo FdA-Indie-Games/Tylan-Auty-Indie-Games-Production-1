@@ -88,17 +88,33 @@ public class Movement : MonoBehaviour
 
         if (LeftEnd == EndPoint)
         {
-            if ((HasFired == false) && (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1")) && (Input.GetButtonDown("Fire1")))
+            if ((HasFired == false) && (SceneManager.GetActiveScene() == (SceneManager.GetSceneByName ("Game1")) && (Input.GetButtonDown("Fire1"))))
             {
                 Instantiate(ball, FirePoint.transform.position, transform.rotation);
                 HasFired = true;
             }
+            if ((HasFired == false) && (SceneManager.GetActiveScene() == (SceneManager.GetSceneByName ("Game2")) && (Input.GetButtonDown("Fire1"))))
+            {
+                Instantiate(ball, FirePoint.transform.position, transform.rotation);
+                HasFired = true;
+            }
+            if ((HasFired == false) && (SceneManager.GetActiveScene() == (SceneManager.GetSceneByName ("Game4")) && (Input.GetButtonDown("Fire1"))))
+            {
+                Instantiate(ball, FirePoint.transform.position, transform.rotation);
+                HasFired = true;
+            }
+            if ((HasFired == false) && (SceneManager.GetActiveScene() == (SceneManager.GetSceneByName ("Game5")) && (Input.GetButtonDown("Fire1"))))
+            {
+                Instantiate(ball, FirePoint.transform.position, transform.rotation);
+                HasFired = true;
+            }
+
         }
 
-        if (Input.GetButtonDown("Fire2"))
+        /*if (Input.GetButtonDown("Fire2"))
         {
             SceneManager.LoadScene("Game1");
-        }
+        }*/
 
         if (CheckValue == -1)
         {
@@ -139,16 +155,28 @@ public class Movement : MonoBehaviour
                     }
         }
     IEnumerator Loop()
-    {
-        yield return new WaitForSeconds (2);
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game3"))
         {
-            SceneManager.LoadScene ("Game1");
-        }
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
-        {
-            SceneManager.LoadScene ("Game3");
-        }
+            yield return new WaitForSeconds (2);
+            if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game3"))
+            {
+                SceneManager.LoadScene ("Game1");
+            }
+            if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
+            {
+                SceneManager.LoadScene ("Game3");
+            }
+            if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game2"))
+            {
+                SceneManager.LoadScene ("Game2");
+            }
+            if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game4"))
+            {
+                SceneManager.LoadScene ("Game5");
+            }
+            if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game5"))
+            {
+                SceneManager.LoadScene ("Game4");
+            }
         /*yield return new WaitForSeconds(2);
         for (int i = 0; i < Pin.Length; i++)
         {
@@ -198,5 +226,5 @@ public class Movement : MonoBehaviour
         }
     }*/
 
-    //Unity API used to assist with fair portions of code
+    //Unity API used to assist with SceneManager code
 }
