@@ -45,8 +45,7 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-     Debug.Log(Turn);   
+    { 
         if (TurnIncrease == false)
         {
             TurnIncrease = true;

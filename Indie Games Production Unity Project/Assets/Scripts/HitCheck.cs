@@ -28,7 +28,6 @@ public class HitCheck : MonoBehaviour
 
         if(CurrentPointX != StartPointX)
         {
-            Debug.Log("Hit");
             PinHit = 1;
             DestroyTime = DestroyTime + Time.deltaTime;
             if (DestroyTime >= 1)
