@@ -72,18 +72,19 @@ public class GameStart : MonoBehaviour
     public void LoadGame()
     {
         if (GameMode == 1)
-        {
-            SceneManager.LoadScene("Game2");
-        }
-        if (GameMode == 2)
-        {
-            SceneManager.LoadScene("Game4");
-        }
-        else
-        {
-            SceneManager.LoadScene("Game1");
-        }
+            {
+                SceneManager.LoadScene("Game2");
+            }
+            if (GameMode == 2)
+            {
+                SceneManager.LoadScene("Game4");
+            }
+            if (GameMode == 3)
+            {
+                SceneManager.LoadScene("Game1");
+            }
     }
+        
 
     //https://www.youtube.com/watch?v=zc8ac_qUXQY used for initial understanding of UI elements
 }

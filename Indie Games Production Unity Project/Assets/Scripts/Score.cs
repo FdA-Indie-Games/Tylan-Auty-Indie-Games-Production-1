@@ -33,6 +33,12 @@ public class Score : MonoBehaviour
             Round = 1;
             Turn = 0;
         }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("ScoreScreen"))
+        {
+            Points = 0;
+            Round = 1;
+            Turn = 0;
+        }
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
         {
@@ -67,7 +73,11 @@ public class Score : MonoBehaviour
         }
         Points = 0;
     }
-
+    public void ReplayReset()
+    {
+        Total1 = 0;
+        Total2 = -80; //Game was automatically giving Total2 80 points at start, -80 is to cancel that out
+    }
     // Update is called once per frame
     void Update()
     {
