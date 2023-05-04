@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartUIGame.unity
     guid: 208ba28914f4be44b8d518ad291b551b
   - enabled: 1
+    path: Assets/Scenes/RoundSelect.unity
+    guid: 71e9bd33e97d74244b4a593ed3ad6d56
+  - enabled: 1
     path: Assets/Scenes/Game1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1

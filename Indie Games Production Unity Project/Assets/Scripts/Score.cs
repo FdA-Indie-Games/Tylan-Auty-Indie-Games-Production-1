@@ -16,10 +16,13 @@ public class Score : MonoBehaviour
     public static int Turn;
     public static int Round = 1;
     public Text UIRound;
+    public float MaxRounds;
     
     // Start is called before the first frame update
     void Start()
     {
+        //MaxRounds = GetComponent<GameStart>().RoundTotal;
+
         Debug.Log(Turn);
         //HitCheck PinHit = GetComponent<HitCheck>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
