@@ -18,13 +18,22 @@ public class Score : MonoBehaviour
     public Text UIRound;
     public float MaxRounds;
     
+    
     // Start is called before the first frame update
     void Start()
     {
-        //MaxRounds = GetComponent<GameStart>().RoundTotal;
-
         Debug.Log(Turn);
         //HitCheck PinHit = GetComponent<HitCheck>();
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("RoundSelect"))
+        {
+            Total1 = 0;
+            Total2 = 0;
+            Points = 0;
+            Round = 1;
+            Turn = 0;
+        }
+
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
         {
             Total2 = Total2 + Points;
@@ -62,18 +71,11 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MaxRounds = gameObject.GetComponent<GameStart>().RoundTotal2;
+        
         Pins = GameObject.FindGameObjectsWithTag ("Pin");
         Points = 80 - Pins.Length;
         //Points = GetComponent<HitCheck>().PinHit;
-
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("StartUIGame"))
-        {
-            Total1 = 0;
-            Total2 = 0;
-            Points = 0;
-            Round = 1;
-            Turn = 0;
-        }
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
         {
@@ -109,6 +111,18 @@ public class Score : MonoBehaviour
             UITotal2.text = "P2 Total: " + Total2.ToString();
         }
 
-        UIRound.text = "Round " + Round.ToString();
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("ScoreScreen"))
+        {
+            UITotal1.text = "P1 Total: " + Total1.ToString();
+            UITotal2.text = "P2 Total: " + Total2.ToString();
+        }
+
+        UIRound.text = "Round " + Round.ToString() + "/" + MaxRounds.ToString();
+
+
+        if(Round > MaxRounds)
+        {
+            SceneManager.LoadScene("ScoreScreen");
+        }
     }
 }

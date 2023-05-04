@@ -8,10 +8,11 @@ public class GameStart : MonoBehaviour
 {
     public static float GameMode;
     public static float RoundTotal;
+    public float RoundTotal2;
     // Start is called before the first frame update
     void Start()
     {
-  
+        RoundTotal2 = RoundTotal;
     }
     public void PressStart()
     {
@@ -39,6 +40,15 @@ public class GameStart : MonoBehaviour
         SceneManager.LoadScene("RoundSelect");
     }
 
+    public void Back()
+    {
+        SceneManager.LoadScene("StartUIGame");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
     public void FiveRounds()
     {
         RoundTotal = 5;
