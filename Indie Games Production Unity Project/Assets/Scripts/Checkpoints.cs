@@ -33,3 +33,4 @@ public class Checkpoints : MonoBehaviour
         //Code here searches for all items tagged as checkpoints and assigns them a random value, before translating it to one of three numbers.
     }
 }
+//Code largely based on randomisation code from Programming project.

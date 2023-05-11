@@ -244,5 +244,5 @@ public class Movement : MonoBehaviour
         //Pre-scene reset code.
     }*/
 
-    //Unity API used to assist with SceneManager code
+    //Unity API used to assist with SceneManager code (https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.GetSceneByName.html, https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.GetActiveScene.html, https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html)
 }

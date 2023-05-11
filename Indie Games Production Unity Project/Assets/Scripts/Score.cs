@@ -17,6 +17,9 @@ public class Score : MonoBehaviour
     public static int Round = 1;
     public Text UIRound;
     public float MaxRounds;
+    public GameObject Instructions;
+    public float ActiveTime;
+    public bool IsActive;
     
     
     // Start is called before the first frame update
@@ -145,5 +148,17 @@ public class Score : MonoBehaviour
             SceneManager.LoadScene("ScoreScreen");
         }
         //Loads the score screen if the current round number has exceeded the maximum round number.
+
+        if(Round == 1 && Turn == 1) //Determines system can only be used during the very first turn.
+        {
+            IsActive = true;
+            ActiveTime = ActiveTime + Time.deltaTime;
+            if (ActiveTime >= 3)
+            {
+                IsActive = false;
+            }
+        }
+        Instructions.SetActive(IsActive); //Sets the instructions to only be active when the corresponding bool is set to true.
     }
 }
+//Code often based on existing code from within this project.

@@ -92,5 +92,5 @@ public class GameStart : MonoBehaviour
     //Takes the previously given GameMode value and translates it into one of the 3 game modes.
         
 
-    //https://www.youtube.com/watch?v=zc8ac_qUXQY and Unity API used for initial understanding of UI elements
+    //https://www.youtube.com/watch?v=zc8ac_qUXQY used to assist with initial void systems.
 }
