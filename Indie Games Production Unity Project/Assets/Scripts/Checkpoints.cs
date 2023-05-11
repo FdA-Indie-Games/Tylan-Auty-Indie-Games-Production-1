@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float Variable;
     public GameObject[] Checkpoint;
     public float Value;
@@ -30,11 +29,7 @@ public class Checkpoints : MonoBehaviour
                 Value = -1;
             } 
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Code here searches for all items tagged as checkpoints and assigns them a random value, before translating it to one of three numbers.
     }
 }

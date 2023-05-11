@@ -13,6 +13,7 @@ public class GameStart : MonoBehaviour
     void Start()
     {
         RoundTotal2 = RoundTotal;
+        //Workaround for glitch where static float would not work on GetComponent used on Score.cs.
     }
     public void PressStart()
     {
@@ -49,6 +50,8 @@ public class GameStart : MonoBehaviour
     {
         Application.Quit();
     }
+
+    //Each of these are simple UI functions that activate their voids upon a button being used in-game.
     public void FiveRounds()
     {
         RoundTotal = 5;
@@ -69,6 +72,8 @@ public class GameStart : MonoBehaviour
         RoundTotal = 4192;
     }
 
+    //Each of these set a certain number of rounds to be played, is the screen given after the player selects their game mode of choice.
+
     public void LoadGame()
     {
         if (GameMode == 1)
@@ -84,7 +89,8 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("Game1");
             }
     }
+    //Takes the previously given GameMode value and translates it into one of the 3 game modes.
         
 
-    //https://www.youtube.com/watch?v=zc8ac_qUXQY used for initial understanding of UI elements
+    //https://www.youtube.com/watch?v=zc8ac_qUXQY and Unity API used for initial understanding of UI elements
 }

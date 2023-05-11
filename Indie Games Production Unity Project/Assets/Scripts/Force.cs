@@ -9,17 +9,15 @@ public class Force : MonoBehaviour
     public float force;
     float time;
     float gravity = -9.81f;
-    
-    // Start is called before the first frame update
     void Start()
     {
         Rigid = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         Rigid.velocity = new Vector3(0,0,-1) * force * gravity;
+
+        //Allows the bowling balls being fired to go towards the pins, taking force and gravity into consideration.
 
         time = time + Time.deltaTime;
 
@@ -27,5 +25,7 @@ public class Force : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //Destroys the game object after 3 seconds have concluded.
     }
 }
