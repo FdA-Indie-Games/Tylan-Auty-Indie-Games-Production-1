@@ -41,6 +41,8 @@ public class Movement : MonoBehaviour
         //Pin = GameObject.FindGameObjectsWithTag("Pin");
         //PinSpawn = Pin.transform.position;
         //AisleChecker = GameObject.FindGameObjectsWithTag("AisleChecker");
+
+        //Sets all the values to the defaults.
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class Movement : MonoBehaviour
             //Pin.transform.position = PinSpawn;
             Turn = Turn + 1;
         }
+        //Detects the end of a turn and adds the turn number up.
 
         TurnProcess();
     }
@@ -66,10 +69,13 @@ public class Movement : MonoBehaviour
         {
              transform.Translate(0,0,-1 * Speed * Time.deltaTime);
         }
+        //Both of these have the cannon travel in the direction towards the endpoint based on where the endpoint is currently assigned.
+
         if(SpeedStop == true)
         {
             transform.Translate(0,0,0 * Speed * Time.deltaTime);
         }
+        //Stops the cannon when game requires cannon to stop.
 
         Position = gameObject.transform.position.x;
 
@@ -78,12 +84,15 @@ public class Movement : MonoBehaviour
             SpeedStop = true;
             StartCoroutine(DirectionChange());
         }
+        //Detects when the cannon has reached the right end and has the cannon prepare to move back to the left end.
+
         if (LeftEnd == EndPoint & Position <= LeftEnd)
         {
             //PinSpawner();
             SpeedStop = true;
             StartCoroutine(Loop());
         }
+        //Stops the cannon at the left end, loads a different coroutine.
 
         if (LeftEnd == EndPoint)
         {
@@ -107,6 +116,7 @@ public class Movement : MonoBehaviour
                 Instantiate(ball, FirePoint.transform.position, transform.rotation);
                 HasFired = true;
             }
+            //Determines the scenes and circumstances in which the player is allowed to fire, such as if the player has already fired within an aisle.
 
         }
 
@@ -114,6 +124,7 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene("Game1");
         }*/
+        //Old code used to manually restart the scene
 
         if (CheckValue == -1)
         {
@@ -129,6 +140,7 @@ public class Movement : MonoBehaviour
         {
             Speed = -12;
         }
+        //Sets a speed for the cannon to travel in based on the checkpoint value detected
     }
     void OnTriggerEnter(Collider other)
         {
@@ -136,22 +148,26 @@ public class Movement : MonoBehaviour
             {
                 HasFired = false;
             }
+            //Resets the player's ability to fire upon entering a new aisle.
 
             if (other.gameObject.CompareTag("Checkpoint"))
             {
                 CheckValue = other.GetComponent<Checkpoints>().Value;
             }
+            //Finds the checkpoints value in order to alter the cannons speed.
 
             if (other.gameObject.CompareTag("StartCheckpoint"))
             {
                 TurnIncrease = false;
             }
+            //Sets turn increase to false upon reaching the start checkpoint.
 
             if ((other.gameObject.CompareTag("CPUFire")) && (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game3")) && (LeftEnd == EndPoint))
-                    {
-                        Instantiate(ball, FirePoint.transform.position, transform.rotation);
-                        HasFired = true;
-                    }
+            {
+                Instantiate(ball, FirePoint.transform.position, transform.rotation);
+                HasFired = true;
+            }
+            //Allows the CPU to fire in their appropriate scenes.
         }
     IEnumerator Loop()
         {
@@ -176,6 +192,8 @@ public class Movement : MonoBehaviour
             {
                 SceneManager.LoadScene ("Game4");
             }
+            //Loads the next scene based on what scene is currently loaded.
+
         /*yield return new WaitForSeconds(2);
         for (int i = 0; i < Pin.Length; i++)
         {
@@ -189,6 +207,7 @@ public class Movement : MonoBehaviour
             }
             HasSpawned = true;
         }
+        //Was intended to destroy any remaining pins and respawn them during a new turn starting, replaced with scene reset.
         
         HasSpawned = true;
         SpeedStop = false;
@@ -205,6 +224,8 @@ public class Movement : MonoBehaviour
         SpeedStop = false;
         EndPoint = LeftEnd;
     }
+    //Changes the direction of the Endpoint after 2 seconds.
+
 
     /*public void OnTriggerEnter(Collider Endcheck)
     {
@@ -223,6 +244,7 @@ public class Movement : MonoBehaviour
             }
             HasSpawned = true;
         }
+        //Old code from before scene resetting was used to reload the game.
     }*/
 
     //Unity API used to assist with SceneManager code

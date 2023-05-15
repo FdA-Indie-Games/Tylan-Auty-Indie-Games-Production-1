@@ -20,6 +20,7 @@ public class HitCheck : MonoBehaviour
         StartPointX = gameObject.transform.position.x;
         PinHit = 0;
     }
+    //Grabs initial position of pins.
 
     // Update is called once per frame
     void Update()
@@ -36,6 +37,7 @@ public class HitCheck : MonoBehaviour
             }
             //Hits += 1;
         }
+        //Detects that the pin has been hit by comparing the start position to its current position.
 
         
         /*NewTurn = GetComponent<Movement>().TurnIncrease;
@@ -45,9 +47,10 @@ public class HitCheck : MonoBehaviour
         }*/
     }
 
-    void TurnProcess()
+    /*void TurnProcess()
     {
         Destroy(gameObject);
 
-    }
+    //Not used, was attempted for before turns would reload in the scene rather than via a reset.
+    }*/
 }

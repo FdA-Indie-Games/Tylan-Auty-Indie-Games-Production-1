@@ -14,6 +14,7 @@ public class GameStart : MonoBehaviour
     {
         RoundTotal2 = RoundTotal;
     }
+    //Used to patch glitch where GetComponent would not work on static value.
     public void PressStart()
     {
         SceneManager.LoadScene("StartUIGame");
@@ -45,6 +46,8 @@ public class GameStart : MonoBehaviour
         SceneManager.LoadScene("StartUIGame");
     }
 
+    //Each of these load the next scene in the menu whilst assigning a static float to be called later on.
+
     public void Quit()
     {
         Application.Quit();
@@ -69,6 +72,8 @@ public class GameStart : MonoBehaviour
         RoundTotal = 4192;
     }
 
+    //These 3 assign a number of rounds to be used to determine the maximum number of rounds.
+
     public void LoadGame()
     {
         if (GameMode == 1)
@@ -84,6 +89,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("Game1");
             }
     }
+    //Loads the appropriate scenes based on the value given beforehand.
         
 
     //https://www.youtube.com/watch?v=zc8ac_qUXQY used for initial understanding of UI elements

@@ -13,10 +13,5 @@ public class CPURandom : MonoBehaviour
 
         transform.Translate(Displacement);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    //Randomly moves the CPU Firing areas in order to randomise when the CPU fires into the aisle.
 }

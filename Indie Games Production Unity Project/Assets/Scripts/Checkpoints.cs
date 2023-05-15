@@ -29,12 +29,8 @@ public class Checkpoints : MonoBehaviour
             {
                 Value = -1;
             } 
+        //Code here creates a random value for each checkpoint in the game, and then simplifies the value to one of 3 numbers.
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+//Code primarily based on code used on programming project.

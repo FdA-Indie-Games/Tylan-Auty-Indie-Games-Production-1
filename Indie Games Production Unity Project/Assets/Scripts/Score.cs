@@ -33,6 +33,8 @@ public class Score : MonoBehaviour
             Round = 1;
             Turn = 0;
         }
+        //Resets all static values to prevent scores from prior games appearing
+
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("ScoreScreen"))
         {
             Points = 0;
@@ -65,12 +67,14 @@ public class Score : MonoBehaviour
             Total1 = Total1 + Points;
             Turn += 1;
         }
+        //Sends the current score to one of the two total scores based on what scene is currently active.
 
         if (Turn == 3)
         {
             Turn = 1;
             Round += 1;
         }
+        //Adds up the rounds.
         Points = 0;
     }
     public void ReplayReset()
@@ -82,10 +86,12 @@ public class Score : MonoBehaviour
     void Update()
     {
         MaxRounds = gameObject.GetComponent<GameStart>().RoundTotal2;
+        //Takes value of round total assigned in the games UI.
         
         Pins = GameObject.FindGameObjectsWithTag ("Pin");
         Points = 80 - Pins.Length;
         //Points = GetComponent<HitCheck>().PinHit;
+        //Code designed to take the number of existing pins and use it to minus off of 80 (the starting number of pins), allowing the score to count up for each deleted pin.
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Game1"))
         {
@@ -129,10 +135,13 @@ public class Score : MonoBehaviour
 
         UIRound.text = "Round " + Round.ToString() + "/" + MaxRounds.ToString();
 
+        //Sets different text for each different scene.
+
 
         if(Round > MaxRounds)
         {
             SceneManager.LoadScene("ScoreScreen");
         }
+        //Detects when the game has gone over the max rounds value and enters the scorescreen.
     }
 }

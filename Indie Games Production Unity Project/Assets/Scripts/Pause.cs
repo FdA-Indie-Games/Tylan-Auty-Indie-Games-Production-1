@@ -30,8 +30,10 @@ public class Pause : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        //Stops all time-based operations upon pause being pressed.
 
         PauseText.SetActive(Paused);
+        //Sets the pause text and anything attached to it to only appear when the game is paused.
     }
 
     public void Resume()
@@ -43,6 +45,7 @@ public class Pause : MonoBehaviour
     {
         SceneManager.LoadScene("StartUI");
     }
+    //Loads the game back to its start screen.
 
     public void Quit()
     {

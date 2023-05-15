@@ -27,5 +27,7 @@ public class Force : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //Grants the bowling ball its force, and has them delete themselves after 3 seconds.
     }
 }
